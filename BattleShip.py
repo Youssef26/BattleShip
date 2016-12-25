@@ -34,18 +34,18 @@ ship_col = random_col(board)
 carrier_row1 = random_row(board)
 carrier_col1 = random_col(board)
 carrier_row2 = carrier_row1 - 1
-if carrier_row2 < 0 or carrier_row1 == 0:
+if carrier_row2 < 0 or carrier_row1 == 0: #makes sure that the two ships dontspawn on each other!
     carrier_row1 += 1
     carrier_row2 += 1
 while (carrier_row1 or carrier_row2 == ship_row) and (carrier_col1 == ship_col):
     if carrier_col1 >= 0:
         carrier_col1 -= 1
-print ship_row
+print ship_row #debug purposes
 print ship_col
 print carrier_row1
-print carrier_row2
+print carrier_row2 
 print carrier_col1
-for turn1 in range(turns):
+for turn1 in range(turns): #the game loop
     guess_row = int(raw_input("Guess Row:"))
     guess_col = int(raw_input("Guess Col:"))
     if (guess_row == ship_row and guess_col == ship_col) or ((guess_col == carrier_col1) and guess_row == (carrier_row2 or carrier_row2)):
