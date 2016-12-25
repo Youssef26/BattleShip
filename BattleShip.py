@@ -64,8 +64,8 @@ for turn1 in range(turns):
             board[guess_row][guess_col] = "X"
     print "Turn ", turn1 +1
     print_board(board)
-print "Game Over!"
-"""if players != 1:
+print "Game Over!" #the part below caused many bugs and crashes, so I commented it out for i dont know how to fix
+"""if players == 2:
     print "Player 2 starts now!"
     ship_row = random_row(board1)
     ship_col = random_col(board1)
